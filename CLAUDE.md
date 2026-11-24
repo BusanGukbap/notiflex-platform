@@ -32,6 +32,10 @@ Notiflex — B2B 알림 SaaS 플랫폼. 고객사(테넌트)가 API로 알림을
 ```
 notiflex-platform/
 ├── CLAUDE.md
+├── README.md
+├── JOURNEY.md           # 실습 진행 기록 (각 서브챕터 완료 시 갱신)
+├── .claude/commands/
+│   └── update-docs.md   # /update-docs 커스텀 스킬
 ├── app/                 # Go 애플리케이션 (notiflex-api)
 ├── k8s/
 │   └── smb/             # K8s 매니페스트
@@ -45,8 +49,12 @@ notiflex-platform/
 2. **변경 전 현재 상태를 확인한다.** `kubectl get`, `gcloud ... describe/list`로 현재 상태를 본 뒤 변경한다.
 3. **모든 kubectl 명령에 `--context gke-sysnet4admin_book_gitaiops`를 지정한다.** 현재 컨텍스트가 다른 클러스터일 수 있다.
 4. **매니페스트는 Git이 원본이다.** 클러스터에 직접 적용한 변경도 반드시 `k8s/` 아래 파일에 반영한다.
-5. **시크릿을 커밋하지 않는다.** 토큰·키·비밀번호는 저장소에 넣지 않는다.
+5. **시크릿을 커밋하지 않는다.** 토큰·키·비밀번호는 저장소에 넣지 않는다. (public 저장소)
+6. **각 장 마지막에 `/update-docs`를 실행한다.** JOURNEY.md·README.md·CLAUDE.md 등 문서를 실제 상태 기준으로 갱신하고 커밋한다.
 
 ## 실행 환경 메모 (Windows)
 
 - Git Bash에서 `gcloud`, `gh`는 `~/bin`의 래퍼 스크립트로 실행된다 (gcloud는 번들 Python을 쓰는 `gcloud.cmd`로 연결).
+- `kubectl`, `gke-gcloud-auth-plugin`은 gcloud 컴포넌트로 설치되어 `%LOCALAPPDATA%\Google\Cloud SDK\google-cloud-sdk\bin`에 있다.
+- `/update-docs`는 사용자 수준 명령(`~/.claude/commands/update-docs.md`)이 이 저장소의 스킬 파일로 연결하므로 다른 폴더에서 실행해도 인식된다.
+- `.github/workflows/` 파일을 push하려면 gh 토큰에 `workflow` scope가 필요하다 (설정 완료).

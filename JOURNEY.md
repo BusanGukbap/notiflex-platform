@@ -11,7 +11,7 @@
 | ch2 | 2.4 GitHub 저장소 | ✅ | 2026-11-24 | BusanGukbap/notiflex-platform (public) |
 | ch2 | 2.5 GKE 클러스터 | ✅ | 2026-11-24 | notiflex-cluster, GKE 1.36.4, Gateway API standard |
 | ch2 | 2.6 빌드/배포 | ✅ | 2026-11-24 | Cloud Build → api:v0.1.0, Pod 2개 Running |
-| ch2 | 2.7 첫 커밋 | ✅ | 2026-11-24 | |
+| ch2 | 2.7 첫 커밋 | ✅ | 2026-11-24 | 67654f1, `/update-docs` 스킬 추가 |
 | ch3 | 3.2 GitOps 도구 | ⬜ | | |
 | ch3 | 3.3 기능 추가 | ⬜ | | |
 | ch3 | 3.4 CI | ⬜ | | |
@@ -70,3 +70,5 @@
 | 2.2 | statusline 등록 시 `!` 셸에서 jq 인자의 이중 백슬래시가 하나로 줄어 jq 오류 → `> settings.json` 리다이렉트로 파일이 비워짐 | 백업에서 복구, 경로는 `/`로 쓰고 `--arg`로 값 전달, 임시 파일에 쓴 뒤 mv |
 | 2.5 | Windows에서 `gcloud components install` 실패 | `gcloud components copy-bundled-python` 결과를 CLOUDSDK_PYTHON으로 지정 후 설치 |
 | 2.6 | `gcloud builds submit` 403 (compute 기본 SA에 storage.objects.get 없음) | Compute 기본 SA에 `roles/cloudbuild.builds.builder` 부여 |
+| 2.7 | push 거부: `refusing to allow an OAuth App to create or update workflow ... without workflow scope` | `gh auth refresh -h github.com -s workflow`로 토큰에 workflow scope 추가 (3.4 CI에서도 필요) |
+| 2.7 | `/update-docs` 실행 시 unknown command (Claude Code를 `_Book_GitAIOps`에서 실행 중) | `~/.claude/commands/update-docs.md`에 저장소 스킬로 연결하는 사용자 수준 명령 생성 |

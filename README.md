@@ -10,6 +10,10 @@ Notiflex는 B2B 알림 SaaS 플랫폼입니다. 고객사(테넌트)가 API로 �
 notiflex-platform/
 ├── CLAUDE.md            # Claude Code용 프로젝트 컨텍스트와 행동 규칙
 ├── README.md
+├── JOURNEY.md           # 실습 진행 기록 (진행 현황, 버전, 리소스, 트러블슈팅)
+├── .claude/
+│   └── commands/
+│       └── update-docs.md   # /update-docs: 각 장 마지막에 문서 갱신·커밋
 ├── app/                 # Go 애플리케이션 (notiflex-api)
 ├── k8s/
 │   └── smb/             # 쿠버네티스 매니페스트
