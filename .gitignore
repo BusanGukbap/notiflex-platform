@@ -1,0 +1,38 @@
+# --- Go ---
+/app/notiflex-api
+/app/bin/
+*.exe
+*.test
+*.out
+coverage.*
+vendor/
+
+# --- 시크릿 / 인증 정보 (public 저장소: 절대 커밋 금지) ---
+.env
+.env.*
+*.pem
+*.key
+*-key.json
+*sa-key*.json
+credentials*.json
+application_default_credentials.json
+kubeconfig*
+*.kubeconfig
+
+# --- Terraform / Helm 산출물 ---
+.terraform/
+*.tfstate
+*.tfstate.*
+charts/*.tgz
+
+# --- Claude Code 로컬 설정 ---
+.claude/settings.local.json
+
+# --- OS / 에디터 ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
